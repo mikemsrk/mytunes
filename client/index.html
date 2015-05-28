@@ -1,8 +1,19 @@
 <!DOCTYPE html>
 <html>
   <body>
+  <div id="playlist">
+    <form>
+        <h3>Playlist</h3>
+        <input type='text' id='plname'>
+        <input type='submit'>
+    </form>
+    <table id="list">
+
+    </table>
+    </div>
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
      below them until after the scripts load-->
+    <link rel='stylesheet' href='styles/style.css'>
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
@@ -19,6 +30,9 @@
     <script src="views/LibraryEntryView.js"></script>
     <script src="views/SongQueueView.js"></script>
     <script src="views/SongQueueEntryView.js"></script>
+    <script src="views/PlaylistView.js"></script>
+    <script src="views/PlaylistEntryView.js"></script>
+
     <script src="views/AppView.js"></script>
 
     <script>

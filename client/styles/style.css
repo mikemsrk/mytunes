@@ -1,0 +1,27 @@
+table {
+  border-radius: 10%;
+  margin:10px 10px;
+
+}
+h3 {
+  text-align:center;
+  width:100px;
+  background: #f39;
+  border-radius: 5px;
+}
+table td{
+  padding: 10px 10px;
+}
+
+body {
+  font-family: 'Helvetica';
+}
+
+form {
+  margin: 10px;
+}
+
+#playlist{
+  float:right;
+}
+
