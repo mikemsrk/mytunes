@@ -6,27 +6,17 @@ var PlaylistView = Backbone.View.extend({
                           <input type='submit'> \
                         </form> \
                         <table id='list'> \
-                        </table> \
-                        <button id='play'>Play</button>"),
+                        </table>"),
 
   events: {
     'submit form' : 'addPlaylist',
-    'click #play' : 'queuePlaylist'
   },
 
   addPlaylist: function(e){
     e.preventDefault();
     // add a playlist to the playlist
-    this.$('#list').append($("<p>erher</p><button id='play'>Play</button>"));
-  },
-
-  queuePlaylist: function(e){
-    e.preventDefault();
-    // for each the song models
-    this.collection.each(function(song){
-      song.enqueue();
-    });
-    // trigger 'queue' event
+    this.collection.trigger('addList', this);
+    // this.$('#list').append($("<p>erher</p>"));
   },
 
   initialize: function() {
