@@ -15,23 +15,23 @@ var SongQueue = Songs.extend({
   removeSong: function(song){
     // if song === currentSong
     if(this.at(0) === song) {
-      this.at(0).ended();
+     this.songEnd();
     }
-
-      // play next one
+    // play next one
     // else just remove
     this.remove(song);
   },
 
   songEnd: function(){
-    this.remove(this.at(0));
-    if (this.models.length > 0) {
+    this.shift();
+    if (this.length > 0) {
       this.playFirst();
+    }else{
+      this.trigger('stop');
     }
   },
 
   playFirst: function(){
-    // debugger;
     this.at(0).play();
   }
 

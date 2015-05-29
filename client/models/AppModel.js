@@ -26,6 +26,9 @@ var AppModel = Backbone.Model.extend({
       playlist.set('tracks',playlist.get('tracks').add(song));
       playlist.trigger('banana',this);
     }, this);
+    this.get('songQueue').on('stop',function(){
+      this.set('currentSong',null);
+    },this);
 
   }
 

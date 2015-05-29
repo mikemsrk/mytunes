@@ -7,6 +7,13 @@ var PlayerView = Backbone.View.extend({
 
   initialize: function() {
     this.model.on('play',this.setSong,this);
+    this.model.on('change:currentSong', function(model){
+      if(!model){
+        this.setSong(null);
+      }else{
+        this.setSong(model.get('currentSong'));
+      }
+    }, this);
   },
 
   events: {
@@ -15,8 +22,8 @@ var PlayerView = Backbone.View.extend({
 
   dequeue: function () {
     this.model.ended();
+    this.render();
   },
-
 
   setSong: function(song){
     this.model = song;
